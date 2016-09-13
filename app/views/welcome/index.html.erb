@@ -1,0 +1,62 @@
+<div class="banner">
+ <h1>CB Services</h1>
+ <h2>(provided by the Creighton Boys)</h2>
+
+</div>	
+
+
+
+
+
+
+
+
+
+<div><a name="about"></a></div>
+<p>
+<h2>Your neighborhood resource for lawn care, child sitting and pet sitting services</h2></p>
+
+
+
+<div class="container features">
+		<div class="well">
+	    <div class="row">
+
+	    		
+	        <div class="col-xs-12 col-sm-4">
+	        		<%= image_tag("lawnmower.jpg", alt: "lawnmower.jpg", class:"img-responsive") %> 
+	            <!-- <img class="img-responsive" src="/images/catdog.jpg"> -->
+	    	    <h3> We mow, we edge, we trim!  We also offer lawn debris bagging and weed removal. </h3>	
+	    	</div>
+	    		
+	    	<div class="col-xs-12 col-sm-4">
+	    	    <%= image_tag("flashlight.jpg", alt: "flashlight.jpg", class:"img-responsive") %> 
+	    	    <h3> Need a night out or just a break from the kids?  Give us a call!  </h3>
+	    	</div>
+
+	    	<div class="col-xs-12 col-sm-4">
+	    	    <%= image_tag("cat_dog.jpg", alt: "catdog.jpg", class:"img-responsive") %> 
+	    	    <h3> Your pets are in good hands while you are away!  We will walk them, feed them, and clean up their messes!</h3>
+	    	</div>
+	    </div>	
+	    </div>
+	</div>
+
+	
+
+<div class="container-fluid">
+<div class="well">
+<h2> Want to find out more?  Fill out the form below for more </br> information or to make an appointment! </h2>
+
+<div class="well">
+<div><a name="appointments"></a></div>
+
+
+<%= render "contacts/form", :contacts => @contacts %>
+</div>
+</div>
+</div>
+
+
+
+

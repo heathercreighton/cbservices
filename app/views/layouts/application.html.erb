@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cbservices</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+<link href='https://fonts.googleapis.com/css?family=Orbitron|Architects+Daughter|News+Cycle' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<!-- Navigation bar from Bootstrap-->
+
+	<div class="navbar-wrapper">
+      <div class="container">
+
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+             
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="#appointments">Appointments</a></li>
+                <li><a href="#contact">Contact Info</a></li>
+                <li><a href="#about">About</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin Only<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><%=link_to 'Sign In', new_user_session_path, class: 'btn btn-secondary' %></li>
+                    <% if user_signed_in? %>
+                    	<li><%=link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn btn-secondary' %></li>
+                    <% end %>
+                    
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+      </div>
+    </div>
+
+
+<!-- end of navigation bar -->
+
+
+
+
+<div class="container">
+
+	<%= yield %>
+
+</div>	
+
+
+
+
+<div><a name="contact"></a></div>
+	<footer class="container-fluid" >
+		<h3><p>&copy CB Services 2016</p>
+		<ul>
+			
+			<li>Call us at 770-432-6639</li>
+			<li>Email us at <%= mail_to 'cbservices@gmail.com' %> </li>
+			<li>Feel free to contact us:</li>
+		</ul>
+		</h3>
+	</footer>
+
+
+</body>
+</html>

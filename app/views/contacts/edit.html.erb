@@ -1,0 +1,76 @@
+<h1>Editing Contact</h1>
+
+<%= form_for(@contact) do |f| %>
+  <% if @contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+      <ul>
+      <% @contact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="container">
+<div class="row">
+	<div class="col-md-6">
+		  <div class="field">
+		    <%= f.label :name %><br>
+		    <%= f.text_field :name%>
+		  </div>
+		  <div class="field">
+		    <%= f.label :address %><br>
+		    <%= f.text_field :address %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :email %><br>
+		    <%= f.text_field :email %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :phone %><br>
+		    <%= f.text_field :phone %>
+		  </div>
+
+	</div> 
+
+	<div class="col-md-6">
+	  <div class="field">
+	    <p>First Appointment Date Choice</p><br>
+	    <%= f.date_select :date1 %>
+	  </div>
+	  <div class="field">
+	    <p>Second Appointment Date Choice</p><br>
+	    <%= f.date_select :date2 %>
+	  </div>
+	  <div class="field">
+	   <p>Third Appointment Date Choice</p><br>
+	    <%= f.date_select :date3 %>
+	  </div>
+	  <div class="field">
+	    <p>Briefly describe the services you are interested in below:</p><br>
+	    <%= f.text_area :comments %>
+	  </div>
+  </div>
+  <div class="field">
+    <p>Check if job is completed: <br>
+    <%= f.check_box :completed %></p>
+  </div>
+  <div class="field">
+    <p>Check if job has been paid:<br>
+    <%= f.check_box :paid %></p>
+  </div>
+  </div>
+  </div>
+   
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+<%= link_to 'Show', @contact %> |
+<%= link_to 'Back', contacts_path %>

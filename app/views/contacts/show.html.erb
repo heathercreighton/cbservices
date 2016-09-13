@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @contact.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @contact.address %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @contact.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @contact.phone %>
+</p>
+
+<p>
+  <strong>First Appointment Choice Date:</strong>
+  <%= @contact.date1 %>
+</p>
+
+<p>
+  <strong>Second Appointment Choice Date:</strong>
+  <%= @contact.date2 %>
+</p>
+
+<p>
+  <strong>Third Appointment Choice Date:</strong>
+  <%= @contact.date3 %>
+</p>
+
+<p>
+  <strong>Sevices interested in:</strong>
+  <%= @contact.comments %>
+</p>
+
+
+
+<% if user_signed_in? %>
+  <%= link_to 'Edit', edit_contact_path(@contact) %> |
+  <%= link_to 'Back', contacts_path %>
+<% end %>
+
+
+<%= link_to 'Back to CB Services', root_path, class: 'btn btn-secondary' %> 
